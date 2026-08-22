@@ -112,7 +112,7 @@ async function init() {
       layout: { 'line-join': 'round', 'line-cap': 'round' },
       paint: {
         'line-color': '#ffffff',
-        'line-width': z(9, busWidth(1.8, 0.5), 12, busWidth(3.0, 1.0), 14.5, busWidth(4.8, 1.7)),
+        'line-width': z(9, busWidth(1.5, 0.35), 12, busWidth(2.4, 0.7), 14.5, busWidth(3.8, 1.2)),
       },
     });
     map.addLayer({
@@ -120,7 +120,7 @@ async function init() {
       layout: { 'line-join': 'round', 'line-cap': 'round' },
       paint: {
         'line-color': OP_COLOR,
-        'line-width': z(9, busWidth(0.6, 0.45), 12, busWidth(1.4, 0.9), 14.5, busWidth(2.6, 1.6)),
+        'line-width': z(9, busWidth(0.5, 0.3), 12, busWidth(1.1, 0.6), 14.5, busWidth(2.0, 1.1)),
       },
     });
 
@@ -133,7 +133,7 @@ async function init() {
       layout: { 'line-join': 'round', 'line-cap': 'round' },
       paint: {
         'line-color': '#ffffff',
-        'line-width': z(9, busWidth(1.8, 0.5), 12, busWidth(3.0, 1.0), 14.5, busWidth(4.8, 1.7)),
+        'line-width': z(9, busWidth(1.5, 0.35), 12, busWidth(2.4, 0.7), 14.5, busWidth(3.8, 1.2)),
         'line-offset': tramOffset,
       },
     });
@@ -142,7 +142,7 @@ async function init() {
       layout: { 'line-join': 'round', 'line-cap': 'round' },
       paint: {
         'line-color': TRAM,
-        'line-width': z(9, busWidth(0.6, 0.45), 12, busWidth(1.4, 0.9), 14.5, busWidth(2.6, 1.6)),
+        'line-width': z(9, busWidth(0.5, 0.3), 12, busWidth(1.1, 0.6), 14.5, busWidth(2.0, 1.1)),
         'line-offset': tramOffset,
       },
     });
@@ -156,7 +156,7 @@ async function init() {
       layout: { 'line-join': 'round', 'line-cap': 'round' },
       paint: {
         'line-color': '#ffffff',
-        'line-width': z(9, busWidth(2.4, 0.5), 12, busWidth(4.0, 1.0), 14.5, busWidth(6.2, 1.7)),
+        'line-width': z(9, busWidth(2.0, 0.35), 12, busWidth(3.2, 0.7), 14.5, busWidth(5.0, 1.2)),
         'line-offset': railOffset,
       },
     });
@@ -165,7 +165,7 @@ async function init() {
       layout: { 'line-join': 'round', 'line-cap': 'round' },
       paint: {
         'line-color': ['get', 'color'],
-        'line-width': z(9, busWidth(1.2, 0.45), 12, busWidth(2.4, 0.9), 14.5, busWidth(4.0, 1.6)),
+        'line-width': z(9, busWidth(0.9, 0.3), 12, busWidth(1.8, 0.6), 14.5, busWidth(3.0, 1.1)),
         'line-offset': railOffset,
       },
     });
@@ -264,19 +264,21 @@ async function init() {
     // One stretchable rounded-rect icon per mode; `icon-text-fit: both` grows
     // the middle to whatever the label needs while the corners stay crisp.
     const BADGE = 24, R = 6, PR = 2; // logical px, corner radius, pixel ratio
-    const badgeImage = (fill) => {
+    const badgeImage = (fill, rim) => {
       const cv = document.createElement('canvas');
       cv.width = cv.height = BADGE * PR;
       const g = cv.getContext('2d');
       g.scale(PR, PR);
       g.fillStyle = fill;
       g.beginPath();
-      if (g.roundRect) g.roundRect(0, 0, BADGE, BADGE, R);
+      // inset by a pixel so the rim is not clipped at the image edge
+      if (g.roundRect) g.roundRect(1, 1, BADGE - 2, BADGE - 2, R);
       else { // Safari < 16.4
-        g.moveTo(R, 0); g.arcTo(BADGE, 0, BADGE, BADGE, R); g.arcTo(BADGE, BADGE, 0, BADGE, R);
-        g.arcTo(0, BADGE, 0, 0, R); g.arcTo(0, 0, BADGE, 0, R); g.closePath();
+        g.moveTo(R, 1); g.arcTo(BADGE - 1, 1, BADGE - 1, BADGE - 1, R); g.arcTo(BADGE - 1, BADGE - 1, 1, BADGE - 1, R);
+        g.arcTo(1, BADGE - 1, 1, 1, R); g.arcTo(1, 1, BADGE - 1, 1, R); g.closePath();
       }
       g.fill();
+      if (rim) { g.lineWidth = 1.6; g.strokeStyle = rim; g.stroke(); }
       return {
         image: g.getImageData(0, 0, cv.width, cv.height),
         // stretch/content are given in the image's own pixel space
@@ -294,10 +296,13 @@ async function init() {
     // one plate per mode colour: bus navy, tram red, and every rail colour the
     // pipeline listed (metro M1/M2, the SKM lines, the WKD)
     const rgba = (hex, a) => { const n = parseInt(hex.slice(1), 16); return `rgba(${n >> 16},${(n >> 8) & 255},${n & 255},${a})`; };
-    const plates = [['badge-bus', 'rgba(0,89,169,0.78)'], ['badge-tram', 'rgba(214,33,43,0.78)']];
-    for (const c of (meta.railColors || [])) plates.push(['badge-c' + c.slice(1), rgba(c, 0.82)]);
-    for (const [name, fill] of plates) {
-      const b = badgeImage(fill);
+    // White plates with a coloured rim and the numbers in the mode's colour:
+    // the filled navy blocks read as the loudest thing on the sheet (user
+    // report, Warsaw — "za agresywna"); the printed map's badges are white.
+    const plates = [['badge-bus', 'rgba(255,255,255,0.92)', '#0059a9'], ['badge-tram', 'rgba(255,255,255,0.92)', '#d6212b']];
+    for (const c of (meta.railColors || [])) plates.push(['badge-c' + c.slice(1), 'rgba(255,255,255,0.92)', c]);
+    for (const [name, fill, rim] of plates) {
+      const b = badgeImage(fill, rim);
       map.addImage(name, b.image, b.opts);
       // getStyle() does NOT carry images added with addImage, so the hidden map
       // the PNG export renders on had no plate icon and dropped the terminus
@@ -329,13 +334,15 @@ async function init() {
         'text-allow-overlap': true,
         'icon-ignore-placement': true,
       },
-      paint: { 'text-color': '#ffffff' },
+      paint: { 'text-color': ['coalesce', ['get', 'color'], KMK] },
       ...extra,
     });
+    // plates arrive later and the early wave is rarer than before: at overview
+    // zoom the network should read through its corridors, not its loops
     map.addLayer(terminalDef('terminals-major', {
-      minzoom: 11.5, maxzoom: 13, filter: ['>=', ['get', 'n'], 5],
+      minzoom: 12.5, maxzoom: 13.5, filter: ['>=', ['get', 'n'], 8],
     }));
-    map.addLayer(terminalDef('terminals', { minzoom: 13 }));
+    map.addLayer(terminalDef('terminals', { minzoom: 13.5 }));
 
     // station names go on top so they win every collision (see note above)
     map.addLayer(nameDef('stop-names-major', ['==', ['get', 'major'], 1], 9.5,
@@ -438,7 +445,7 @@ async function init() {
         : ['==', ['get', 'mode'], ' '];
       map.setFilter('numbers', mf);
       map.setFilter('terminals', mf);
-      map.setFilter('terminals-major', ['all', ['>=', ['get', 'n'], 5], mf]);
+      map.setFilter('terminals-major', ['all', ['>=', ['get', 'n'], 8], mf]);
     };
     busBox.addEventListener('change', applyFilters);
     tramBox.addEventListener('change', applyFilters);

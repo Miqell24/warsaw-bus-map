@@ -70,7 +70,12 @@ let layoutRiver = null;
 if (!cfg.graph) {
   const res = runLayout(stations, contracted, graph, cfg, log, riverGeo);
   layoutRiver = res.river;
-  const toM = (p) => [res.cx + p[0] * res.s, res.cy + p[1] * res.s];
+  // cfg.spread inflates the finished drawing around the grid origin: the
+  // layout's own scale keeps the sheet the same size whatever the length
+  // targets, so this is THE lever for more room between stops at a given zoom
+  // (user request 22.08.2026 — "większe odległości między przystankami")
+  const SPREAD = cfg.spread || 1;
+  const toM = (p) => [res.cx + p[0] * res.s * SPREAD, res.cy + p[1] * res.s * SPREAD];
   for (const [v, p] of res.pos) {
     const [mx, my] = toM(p);
     stations[v].sx = mx; stations[v].sy = my;
@@ -98,7 +103,7 @@ if (!cfg.graph) {
     });
   }
   layoutStats = res.stats;
-  layoutScale = res.s;
+  layoutScale = res.s * SPREAD;
   layoutCx = res.cx; layoutCy = res.cy;
 }
 

@@ -55,7 +55,10 @@ export const CONFIG = {
   // Crossings are flat from 0.35 down, so the low percentile is close to free
   // and buys back most of the direction errors. 0.2 keeps the diagram compact.
   scalePercentile: 0.2,
-  iters: 12, // improvement rounds (each sweeps all nodes; stops early when nothing moves)
+  iters: 20, // improvement rounds (each sweeps all nodes; stops early when nothing moves)
+  // the finished drawing is inflated by this factor (see build-schematic.mjs):
+  // Warsaw's 4 300 stations needed air between them (user request 22.08.2026)
+  spread: 1.5,
   radialGamma: 0.5, // sub-linear (√) radial compression of the initial positions
   radialR0: 2500, // m — inner radius kept uncompressed (the city core keeps proportions)
   // Corridors are deliberately LONGER here than on the Kraków sheet. This region
@@ -109,7 +112,7 @@ export const CONFIG = {
     w1: 20,
     w2: 1.0, // edge_length_variation
     w3: 2.5, // angle_deviation from the octant nearest the true bearing
-    w4: 6.0, // line_crossings
+    w4: 9.0, // line_crossings (raised from 6 for the Warsaw sheet — fewer crossings, calmer picture)
     w5: 4.0, // node_overlap (node–node and node–foreign-edge)
     w6: 1.0, // label_overlap (coarse boxes)
     w7: 1.5, // unnecessary_bends along each line's path
