@@ -28,6 +28,16 @@ createServer((req, res) => {
     file = join(ROOT, 'web', pathname === '/' ? 'index.html' : pathname);
   }
   file = normalize(file);
+  // directories serve their index.html (→ /schematic/); a missing trailing
+  // slash redirects first, so the page's relative asset paths resolve
+  if (file.startsWith(ROOT) && existsSync(file) && statSync(file).isDirectory()) {
+    if (!pathname.endsWith('/')) {
+      res.writeHead(301, { location: pathname + '/' });
+      res.end();
+      return;
+    }
+    file = join(file, 'index.html');
+  }
   if (!file.startsWith(ROOT) || !existsSync(file) || !statSync(file).isFile()) {
     res.writeHead(404, { 'content-type': 'text/plain; charset=utf-8' });
     res.end('404');

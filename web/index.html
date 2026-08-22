@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Warsaw &amp; Grodzisk Mazowiecki Public Transport — interactive map</title>
 <link rel="stylesheet" href="vendor/maplibre-gl.css">
-<link rel="stylesheet" href="style.css?v=20260821b">
+<link rel="stylesheet" href="style.css?v=20260821c">
 </head>
 <body>
 <div id="map"></div>
@@ -74,18 +74,27 @@
 
     </nav>
   </details>
+  <a class="modelink" href="schematic/">Network diagram &rarr;</a>
+  <div id="view-switch" class="viewsw" role="group" aria-label="Map view">
+    <button type="button" data-view="corridors" class="on">Corridors</button>
+    <button type="button" data-view="lines">Lines</button>
+  </div>
   <div id="base-switch" role="group" aria-label="Base map colours"
        title="The base map underneath the network: the paper look or flat grey newsprint.">
-    <button type="button" data-bg="paper" class="on">Paper base</button>
+    <button type="button" data-bg="paper">Paper base</button>
     <button type="button" data-bg="grey">Grey base</button>
   </div>
+  <p class="hint viewhint corridor-only">One stroke per roadway, the whole network in its mode colours.</p>
+  <p class="hint viewhint lines-only">Every line drawn on its own, in its own colour — up to four side by side.</p>
   <ul class="legend">
-    <li><label><input type="checkbox" id="toggle-bus" checked> <span class="sw line"></span> Bus routes</label></li>
-    <li class="sublegend">ZTM Warszawa (WTP) &middot; GPA Grodzisk Mazowiecki</li>
-    <li><label><input type="checkbox" id="toggle-tram" checked> <span class="sw line tram"></span> Tram routes</label></li>
-    <li class="sublegend">Tramwaje Warszawskie</li>
-    <li><label><input type="checkbox" id="toggle-metro" checked> <span class="sw line metro"></span> Metro, SKM &amp; WKD</label></li>
-    <li class="sublegend"><span class="mini m1"></span>M1 <span class="mini m2"></span>M2 &middot; SKM <span class="mini s1"></span>S1 <span class="mini s2"></span>S2 <span class="mini s3"></span>S3 <span class="mini s4"></span>S4 &middot; <span class="mini wkd"></span>WKD in official colours</li>
+    <li class="lines-only"><span class="sw bundle"><i></i><i></i><i></i><i></i></span> Up to 4 lines: each on its own, in its own colour</li>
+    <li class="lines-only"><span class="sw trunk"></span> 5 or more: one grey stroke, its numbers beside it</li>
+    <li><label><input type="checkbox" id="toggle-bus" checked> <span class="sw line corridor-only"></span> Bus routes</label></li>
+    <li class="sublegend corridor-only">ZTM Warszawa (WTP) &middot; GPA Grodzisk Mazowiecki</li>
+    <li><label><input type="checkbox" id="toggle-tram" checked> <span class="sw line corridor-only tram"></span> Tram routes</label></li>
+    <li class="sublegend corridor-only">Tramwaje Warszawskie</li>
+    <li><label><input type="checkbox" id="toggle-metro" checked> <span class="sw line corridor-only metro"></span> Metro, SKM &amp; WKD</label></li>
+    <li class="sublegend corridor-only"><span class="mini m1"></span>M1 <span class="mini m2"></span>M2 &middot; SKM <span class="mini s1"></span>S1 <span class="mini s2"></span>S2 <span class="mini s3"></span>S3 <span class="mini s4"></span>S4 &middot; <span class="mini wkd"></span>WKD in official colours</li>
     <li><span class="sw stop"></span> Stop</li>
     <li><span class="sw terminus"></span> Terminus</li>
   </ul>
@@ -127,6 +136,6 @@
   <label class="debug"><input type="checkbox" id="toggle-shape"> show raw GTFS shapes (QA)</label>
 </aside>
 <script src="vendor/maplibre-gl.js"></script>
-<script src="app.js?v=20260821b"></script>
+<script src="app.js?v=20260821c"></script>
 </body>
 </html>

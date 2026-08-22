@@ -27,6 +27,16 @@ route ("WKD ZKA", the rail-replacement bus) stays out by the route-type filter;
 the representative variant of every line+direction is the LONGEST pattern
 still worked by ≥15% of the busiest pattern's trips.
 
+## Two views and a diagram
+
+The panel's **Corridors / Lines** switch redraws the network line by line (up to
+four coloured strands side by side, busier roadways as one grey trunk with its
+numbers beside it; `npm run lines`, checked by `npm run audit`). **/schematic/**
+is the automatic network diagram: stop order, branches and shared segments from
+the three feeds, octilinear layout, buses navy, trams red, metro / SKM / WKD in
+their own colours (`npm run schematic`, `pipeline/schematic/`). 344 + 27 + 8
+lines, 4 344 stations, 3 298 corridors, crossings 1 604 → 541.
+
 ## Pipeline
 
 `npm run download` fetches the three feeds, OSM roadways and rails (Overpass,
