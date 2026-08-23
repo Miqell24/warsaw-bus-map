@@ -183,7 +183,7 @@ async function init() {
   map.addControl(new maplibregl.NavigationControl({ visualizePitch: false }), 'top-right');
   map.addControl(new maplibregl.GeolocateControl({ positionOptions: { enableHighAccuracy: true }, trackUserLocation: true, showUserHeading: true, fitBoundsOptions: { maxZoom: 15.5 } }), 'top-right');
   map.addControl(new maplibregl.ScaleControl({ maxWidth: 120 }), 'bottom-left');
-  map.addControl(new maplibregl.AttributionControl({ compact: true, customAttribution: 'Timetables: GTFS ZTM Warszawa (mkuran.pl) · GPA · WKD' }));
+  map.addControl(new maplibregl.AttributionControl({ compact: true, customAttribution: 'Timetables: GTFS ZTM Warszawa (mkuran.pl) · GPA · WKD · commune feeds files.girlc.at' }));
 
   const [meta, linesMeta] = await Promise.all([
     fetch('data/meta.json').then((r) => r.json()),
@@ -222,7 +222,7 @@ async function init() {
     ...Object.entries(LINE_COLORS).flatMap(([l, c]) => [l, c]), CORRIDOR_INK];
   const paintChips = (linesView) => {
     document.getElementById('chips').innerHTML = meta.lines
-      .map((l) => `<button class="chip${l.line === state.selected ? ' active' : ''}" data-line="${esc(l.line)}" ` +
+      .map((l) => `<button class="chip${l.line === state.selected && l.mode === state.selMode ? ' active' : ''}" data-line="${esc(l.line)}" data-mode="${esc(l.mode)}" ` +
         `style="background:${esc(linesView ? lineColor(l.line) : l.color)}">${esc(l.line)}</button>`)
       .join(' ');
   };
@@ -232,7 +232,12 @@ async function init() {
   // 'lines' redraws the same data line by line, up to four coloured strands
   // side by side, everything busier as one grey trunk. Both views are built from
   // the same files; the switch is layers and paint, never a reload.
-  const state = { bus: true, tram: true, metro: true, mline: !!document.getElementById('toggle-mline'), selected: null, journey: null, view: 'corridors', bg: 'auto' };
+  // selected + selMode: a line is picked by NAME AND MODE. Several operators
+  // share this sheet and keep their own numbers, so a name alone is ambiguous
+  // across modes — Łomianki's bus 1 beside tram 1, Otwock's bus M1 beside the
+  // metro's. (Two buses of one name — the W1s of Otwock and Wieliszew — are
+  // one key in the data and light up together, 40 km apart.)
+  const state = { bus: true, tram: true, metro: true, mline: !!document.getElementById('toggle-mline'), selected: null, selMode: null, journey: null, view: 'corridors', bg: 'auto' };
   paintChips(false);
 
   // Line layers go below the base style labels (street names stay readable).
@@ -938,8 +943,9 @@ async function init() {
     // an active journey hides the WHOLE regular network (user request: the
     // line's return run and the rest of its route were noise) — the ride is
     // drawn complete by the journey overlay: legs, via stops, numbers
+    const selModeC = ['==', ['get', 'mode'], state.selMode || ''];
     const selC = state.journey ? false
-      : state.selected ? ['in', state.selected, ['get', 'arr']] : true;
+      : state.selected ? ['all', ['in', state.selected, ['get', 'arr']], selModeC] : true;
     // metrolines are an INDEPENDENT category: three bus sub-worlds — plain
     // buses (no mline flag), pure metroline runs (mline=all) and shared
     // corridors (mline=mix, part of BOTH networks, so either toggle keeps them)
@@ -994,7 +1000,7 @@ async function init() {
     BADGE_LAYERS.forEach((id, b) => {
       map.setFilter(id, ['all', bandC(b), ['has', 'line'], boxModeC,
         state.journey ? false
-          : state.selected ? ['==', ['get', 'line'], state.selected] : true]);
+          : state.selected ? ['all', ['==', ['get', 'line'], state.selected], selModeC] : true]);
     });
     // complex name rows follow: shown while any of the complex's modes is on
     // ('in' does substring search on the "bus,tram" string), and with a line
@@ -1052,7 +1058,7 @@ async function init() {
       // A picked line keeps only its own strands, and they step back onto the
       // roadway centre: a slot is only meaningful inside a bundle being drawn.
       const strandSel = state.journey ? false
-        : state.selected ? ['==', ['get', 'line'], state.selected] : true;
+        : state.selected ? ['all', ['==', ['get', 'line'], state.selected], selModeC] : true;
       map.setFilter('strand-casing', ['all', ['!=', ['get', 'sw'], 1], modeC, strandSel]);
       map.setFilter('strand-line', ['all', modeC, strandSel]);
       for (const id of ['strand-casing', 'strand-line'])
@@ -1136,8 +1142,10 @@ async function init() {
   document.getElementById('chips').addEventListener('click', (e) => {
     const b = e.target.closest('.chip');
     if (!b) return;
-    state.selected = state.selected === b.dataset.line ? null : b.dataset.line;
-    document.querySelectorAll('#chips .chip').forEach((c) => c.classList.toggle('active', c.dataset.line === state.selected));
+    const same = state.selected === b.dataset.line && state.selMode === b.dataset.mode;
+    state.selected = same ? null : b.dataset.line;
+    state.selMode = same ? null : b.dataset.mode;
+    document.querySelectorAll('#chips .chip').forEach((c) => c.classList.toggle('active', c.dataset.line === state.selected && c.dataset.mode === state.selMode));
     applyFilters();
   });
   // null-safe: this region's panel only carries the bus toggle (no metro or
@@ -1338,7 +1346,7 @@ async function init() {
       const fs = Math.max(16, Math.round(out.width / 130));
       ctx.font = `${fs}px sans-serif`;
       ctx.textBaseline = 'bottom';
-      const txt = '© OpenStreetMap contributors · OpenFreeMap · GTFS: ZTM Warszawa (mkuran.pl) · GPA · WKD';
+      const txt = '© OpenStreetMap contributors · OpenFreeMap · GTFS: ZTM Warszawa (mkuran.pl) · GPA · WKD · files.girlc.at';
       const tw = ctx.measureText(txt).width;
       ctx.fillStyle = 'rgba(255,255,255,0.82)';
       ctx.fillRect(out.width - tw - fs, out.height - fs * 1.7, tw + fs, fs * 1.7);
@@ -1582,7 +1590,7 @@ async function init() {
             const fs = Math.max(16, Math.round(Wf / 500));
             cx.font = `${fs}px sans-serif`;
             cx.textBaseline = 'bottom';
-            const txt = '© OpenStreetMap contributors · OpenFreeMap · GTFS: ZTM Warszawa (mkuran.pl) · GPA · WKD';
+            const txt = '© OpenStreetMap contributors · OpenFreeMap · GTFS: ZTM Warszawa (mkuran.pl) · GPA · WKD · files.girlc.at';
             const tw = Math.min(cx.measureText(txt).width, wpx - fs);
             cx.fillStyle = 'rgba(255,255,255,0.82)';
             cx.fillRect(wpx - tw - fs, hpx - fs * 1.7, tw + fs, fs * 1.7);

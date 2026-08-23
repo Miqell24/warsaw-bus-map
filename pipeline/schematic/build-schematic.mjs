@@ -30,14 +30,16 @@ const cfg = applyCliOverrides(CONFIG, process.argv.slice(2));
 // (metro M1/M2, SKM S1…S40 from the feed, WKD purple); fall back to the feed's
 // mode colour
 import { readFileSync, existsSync } from 'node:fs';
+// keyed by the geographic map's mode AND the line: Otwock's bus M1 must not
+// pick up the metro's blue (both are "M1" in meta.json, in different modes)
 const geoColor = new Map();
 {
   const mp = join(ROOT, 'data/out/meta.json');
-  if (existsSync(mp)) for (const l of JSON.parse(readFileSync(mp, 'utf8')).lines || []) geoColor.set(l.line, l.color);
+  if (existsSync(mp)) for (const l of JSON.parse(readFileSync(mp, 'utf8')).lines || []) geoColor.set(l.mode + '|' + l.line, l.color);
 }
 const RAIL_MODES = ['metro', 'skm', 'wkd'];
 const feedColor = new Map(cfg.feeds.map((f) => [f.mode, f.color]));
-const lineColour = (mode, line) => geoColor.get(line) || feedColor.get(mode) || '#5a6672';
+const lineColour = (mode, line) => geoColor.get((mode === 'bus' ? 'bus' : 'tram') + '|' + line) || feedColor.get(mode) || '#5a6672';
 
 // ---------- intake ----------
 const feedData = [];

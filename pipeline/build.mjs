@@ -1,10 +1,18 @@
 // GTFS → OSM graph → map matching (HMM) → GeoJSON files for the frontend.
-// Warsaw & Grodzisk Mazowiecki: THREE feeds on one sheet — ZTM Warszawa (WTP,
+// Warsaw & Grodzisk Mazowiecki: TEN feeds on one sheet — ZTM Warszawa (WTP,
 // via mkuran.pl: buses 3, trams 0, metro 1, SKM 2), GPA Grodzisk (buses, no
-// shapes, no direction_id) and the WKD railway — the two bus operators pour
-// into one bus cfg, metro and SKM/WKD ride the rail slices of the graph in
-// their official colours and get the engine's metro treatment (wide ribbon,
-// station discs, always-on names) via the M/S/WKD line keys.
+// shapes, no direction_id), the WKD railway, and since 23.08.2026 seven
+// commune networks around the city from files.girlc.at (Łomianki, Otwock,
+// Mińsk county, Radzymin, Sulejówek/Wiązowna, Wieliszew, Ząbki) — all bus
+// operators pour into one bus cfg, metro and SKM/WKD ride the rail slices of
+// the graph in their official colours and get the engine's metro treatment
+// (wide ribbon, station discs, always-on names) via the M/S/WKD line keys.
+// Line keys are the operators' OWN designations, unchanged: where two communes
+// both run a "W1" (Otwock's W1 to Metro Imielin, Wieliszew's W1 to Legionowo)
+// the engine merges them into one key — 40 km apart on the sheet, the reader
+// sees two official W1s, the panel one chip with both routes. Cross-mode
+// twins (Łomianki's bus 1 beside tram 1, Otwock's M1–M3 beside the metro) are
+// told apart in the frontend by mode.
 // Usage: node pipeline/build.mjs [--all | lines...] [--tram all|4,M2,S1,WKD]
 // Results land in shared files with properties.color/mode, so the frontend styles
 // them data-driven.
@@ -129,7 +137,24 @@ const MODES = [{
     // sequence is the observation and the headsign the direction key.
     { tag: 'gpa', dir: 'data/gtfs-gpa', mapKey: (sn) => sn, routeTypes: ['3'],
       skipRoute: (r) => /^Z-?\d/.test((r.route_short_name || '').trim()) },
+    // The commune networks (files.girlc.at, CC0; generated from the operators'
+    // T4B/KiedyPrzyjedzie timetables by lz). Shapes everywhere except Ząbki;
+    // direction_id nowhere — the headsign is the direction key. Otwock ships a
+    // synthetic ".M1+M2+M3" route (the three city lines as one timetable
+    // sheet) — skipped, the real M1/M2/M3 routes carry the same trips.
+    { tag: 'lom', dir: 'data/gtfs-lomianki', mapKey: (sn) => sn, routeTypes: ['3'] },
+    { tag: 'otw', dir: 'data/gtfs-otwock', mapKey: (sn) => sn, routeTypes: ['3'],
+      skipRoute: (r) => /^\./.test((r.route_short_name || '').trim()) },
+    { tag: 'min', dir: 'data/gtfs-minsk', mapKey: (sn) => sn, routeTypes: ['3'] },
+    { tag: 'rdz', dir: 'data/gtfs-radzymin', mapKey: (sn) => sn, routeTypes: ['3'],
+      nameFix: (n) => n.replace(/^([^,]+),\s+/, '$1 ') },
+    { tag: 'sul', dir: 'data/gtfs-sulejowek', mapKey: (sn) => sn, routeTypes: ['3'] },
+    { tag: 'wlw', dir: 'data/gtfs-wieliszew', mapKey: (sn) => sn, routeTypes: ['3'], titleCase: true },
+    { tag: 'zab', dir: 'data/gtfs-zabki', mapKey: (sn) => sn, routeTypes: ['3'] },
   ],
+  // the road graph is the main extract plus the eastern strip added for the
+  // Mińsk county lines (Overpass, 23.08.2026) — merged at load, ways deduped
+  osmFiles: ['data/osm/warsaw.json', 'data/osm/warsaw-east.json'],
 }];
 const tramAll = tramLines.length === 1 && tramLines[0] === 'all';
 // the rail trunk treatment (wide ribbon, station discs, always-on names):
@@ -422,6 +447,10 @@ async function processMode(cfg) {
       // feed names carry double spaces here and there — collapse for clean labels
       let name = (s.stop_name || '').replace(/\s+/g, ' ').trim();
       if (feed.titleCase) name = titleCase(name);
+      // a feed's own naming habit, normalised so the same pole gets the same
+      // name across feeds (one label, not two): Radzymin writes "Radzymin,
+      // Głowackiego" where ZTM writes "Radzymin Głowackiego"
+      if (feed.nameFix) name = feed.nameFix(name);
       const fix = STOP_FIX[feed.tag + ':' + s.stop_id];
       stopsById.set(feed.tag + ':' + s.stop_id, {
         name,
@@ -498,7 +527,22 @@ async function processMode(cfg) {
     if (lon < lonMin) lonMin = lon; if (lon > lonMax) lonMax = lon;
   }
   const proj = makeProj((latMin + latMax) / 2, (lonMin + lonMax) / 2);
-  const osm = JSON.parse(readFileSync(join(ROOT, cfg.osmFile), 'utf8'));
+  // one extract, or several merged (a region grown after the first download):
+  // later files only ADD ways the earlier ones do not have
+  const osm = { elements: [] };
+  {
+    const seen = new Set();
+    for (const file of cfg.osmFiles || [cfg.osmFile]) {
+      const part = JSON.parse(readFileSync(join(ROOT, file), 'utf8'));
+      let added = 0;
+      for (const e of part.elements) {
+        const k = e.type + e.id;
+        if (seen.has(k)) continue;
+        seen.add(k); osm.elements.push(e); added++;
+      }
+      log(`OSM ${file}: ${part.elements.length} elements (${added} new)`);
+    }
+  }
   // railKeep: this cfg sees only its own kind of rails (see MODES above);
   // railExtra admits single oddballs from other layers (the rack railway)
   if (cfg.railKeep) osm.elements = osm.elements.filter((e) => cfg.railKeep.has(e.tags?.railway) || (cfg.railExtra && cfg.railExtra(e)));

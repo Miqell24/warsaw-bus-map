@@ -56,7 +56,7 @@ async function init() {
   window.__map = map; // debug/test hook
   map.addControl(new maplibregl.NavigationControl({ visualizePitch: false }), 'top-right');
   map.addControl(new maplibregl.AttributionControl({
-    compact: true, customAttribution: 'Diagram: GTFS ZTM Warszawa (mkuran.pl) · GPA · WKD',
+    compact: true, customAttribution: 'Diagram: GTFS ZTM Warszawa (mkuran.pl) · GPA · WKD · commune feeds files.girlc.at',
   }));
 
   map.on('load', () => {

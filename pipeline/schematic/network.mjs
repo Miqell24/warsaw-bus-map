@@ -88,7 +88,11 @@ export async function readFeed(root, feed, cfg, log) {
   // 5) stops.txt → poles with the station group from stop_code ("835-03" → "835")
   const poles = new Map();
   for (const s of await readCsv(join(dir, 'stops.txt'))) {
-    const name = (s.stop_name || '').replace(/\s+/g, ' ').trim();
+    let name = (s.stop_name || '').replace(/\s+/g, ' ').trim();
+    // same per-feed name normalisation as the geographic map (build.mjs):
+    // ALL-CAPS feeds to title case, a feed's "Town, Street" to "Town Street"
+    if (feed.titleCase) name = name.replace(/[^\s\-,.\/()]+/g, (w) => (w.length > 3 && w === w.toUpperCase() ? w[0] + w.slice(1).toLowerCase() : w));
+    if (feed.nameFix) name = feed.nameFix(name);
     const code = (s.stop_code || '').trim();
     // KM Rybnik writes the complex/pole pair with a slash ("2/1"), Kraków with
     // a dash ("835-03"); the other two feeds number every pole separately, so
