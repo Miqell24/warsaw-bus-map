@@ -17254,6 +17254,1756 @@
       "rank": 1
     },
     {
+      "line": "1",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "P+R Al. Krakowska",
+          "variants": 13,
+          "tripCount": 643,
+          "stops": 41,
+          "lengthKm": 18.09,
+          "stats": {
+            "observations": 878,
+            "matched": 878,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.767587304363167,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Annopol",
+          "variants": 14,
+          "tripCount": 657,
+          "stops": 44,
+          "lengthKm": 18.36,
+          "stats": {
+            "observations": 891,
+            "matched": 891,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.7088019063084272,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "2",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Metro Młociny",
+          "variants": 8,
+          "tripCount": 518,
+          "stops": 11,
+          "lengthKm": 7.14,
+          "stats": {
+            "observations": 358,
+            "matched": 358,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.7842920495024313,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Nowodwory",
+          "variants": 7,
+          "tripCount": 538,
+          "stops": 13,
+          "lengthKm": 7.42,
+          "stats": {
+            "observations": 369,
+            "matched": 369,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.7910412952021915,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "3",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Gocławek",
+          "variants": 4,
+          "tripCount": 633,
+          "stops": 30,
+          "lengthKm": 12.31,
+          "stats": {
+            "observations": 585,
+            "matched": 585,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.701194966081518,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Annopol",
+          "variants": 4,
+          "tripCount": 638,
+          "stops": 30,
+          "lengthKm": 12.26,
+          "stats": {
+            "observations": 583,
+            "matched": 583,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6727152286925666,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "4",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Metro Wilanowska",
+          "variants": 5,
+          "tripCount": 681,
+          "stops": 37,
+          "lengthKm": 17.46,
+          "stats": {
+            "observations": 874,
+            "matched": 874,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.809258835016493,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Żerań Wschodni",
+          "variants": 5,
+          "tripCount": 674,
+          "stops": 36,
+          "lengthKm": 17.83,
+          "stats": {
+            "observations": 893,
+            "matched": 893,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.7778719872969213,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "6",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Gocławek",
+          "variants": 5,
+          "tripCount": 665,
+          "stops": 43,
+          "lengthKm": 18.08,
+          "stats": {
+            "observations": 855,
+            "matched": 855,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6835945223506157,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Metro Młociny",
+          "variants": 5,
+          "tripCount": 670,
+          "stops": 43,
+          "lengthKm": 17.95,
+          "stats": {
+            "observations": 854,
+            "matched": 854,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.650256287239086,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "7",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Kawęczyńska - Bazylika",
+          "variants": 3,
+          "tripCount": 669,
+          "stops": 19,
+          "lengthKm": 8.06,
+          "stats": {
+            "observations": 300,
+            "matched": 300,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 2.6117161865068357,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Gocławek",
+          "variants": 3,
+          "tripCount": 676,
+          "stops": 20,
+          "lengthKm": 8.45,
+          "stats": {
+            "observations": 318,
+            "matched": 318,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 2.7133347576955895,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "9",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "P+R Al. Krakowska",
+          "variants": 6,
+          "tripCount": 1452,
+          "stops": 22,
+          "lengthKm": 8.79,
+          "stats": {
+            "observations": 413,
+            "matched": 413,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.7292277661264048,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Muzeum Narodowe",
+          "variants": 7,
+          "tripCount": 1462,
+          "stops": 23,
+          "lengthKm": 8.88,
+          "stats": {
+            "observations": 417,
+            "matched": 417,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6754075356022176,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "10",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Metro Wilanowska",
+          "variants": 6,
+          "tripCount": 681,
+          "stops": 34,
+          "lengthKm": 15.58,
+          "stats": {
+            "observations": 767,
+            "matched": 767,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.7188867151988985,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Os. Górczewska",
+          "variants": 6,
+          "tripCount": 672,
+          "stops": 35,
+          "lengthKm": 15.83,
+          "stats": {
+            "observations": 780,
+            "matched": 780,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.7208543158450544,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "11",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Sielce",
+          "variants": 8,
+          "tripCount": 195,
+          "stops": 33,
+          "lengthKm": 16.08,
+          "stats": {
+            "observations": 791,
+            "matched": 791,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6831404450788487,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Nowe Bemowo",
+          "variants": 8,
+          "tripCount": 215,
+          "stops": 34,
+          "lengthKm": 16.07,
+          "stats": {
+            "observations": 790,
+            "matched": 790,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6799098827623276,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "14",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Miasteczko Wilanów",
+          "variants": 5,
+          "tripCount": 451,
+          "stops": 26,
+          "lengthKm": 12.31,
+          "stats": {
+            "observations": 616,
+            "matched": 616,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.598730255082741,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Banacha",
+          "variants": 3,
+          "tripCount": 666,
+          "stops": 25,
+          "lengthKm": 12.26,
+          "stats": {
+            "observations": 614,
+            "matched": 614,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.599524542283172,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "15",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "P+R Al. Krakowska",
+          "variants": 4,
+          "tripCount": 617,
+          "stops": 35,
+          "lengthKm": 14.73,
+          "stats": {
+            "observations": 723,
+            "matched": 723,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6849408045830763,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Marymont-Potok",
+          "variants": 7,
+          "tripCount": 419,
+          "stops": 37,
+          "lengthKm": 14.99,
+          "stats": {
+            "observations": 736,
+            "matched": 736,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6502429974278712,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "16",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Miasteczko Wilanów",
+          "variants": 3,
+          "tripCount": 628,
+          "stops": 44,
+          "lengthKm": 20.93,
+          "stats": {
+            "observations": 1048,
+            "matched": 1048,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6177416982820887,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Metro Młociny",
+          "variants": 4,
+          "tripCount": 623,
+          "stops": 42,
+          "lengthKm": 20.67,
+          "stats": {
+            "observations": 1035,
+            "matched": 1035,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.639804566874748,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "17",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Tarchomin Kościelny",
+          "variants": 5,
+          "tripCount": 682,
+          "stops": 50,
+          "lengthKm": 23.15,
+          "stats": {
+            "observations": 1158,
+            "matched": 1158,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6849214582624799,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "PKP Służewiec",
+          "variants": 5,
+          "tripCount": 698,
+          "stops": 50,
+          "lengthKm": 22.95,
+          "stats": {
+            "observations": 1149,
+            "matched": 1149,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.7591981437402366,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "18",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Żerań FSO",
+          "variants": 5,
+          "tripCount": 668,
+          "stops": 40,
+          "lengthKm": 17.64,
+          "stats": {
+            "observations": 883,
+            "matched": 883,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6495894922972927,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "PKP Służewiec",
+          "variants": 5,
+          "tripCount": 661,
+          "stops": 42,
+          "lengthKm": 17.69,
+          "stats": {
+            "observations": 886,
+            "matched": 886,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.7677237621191462,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "19",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Kino Femina",
+          "variants": 5,
+          "tripCount": 684,
+          "stops": 17,
+          "lengthKm": 7.67,
+          "stats": {
+            "observations": 385,
+            "matched": 385,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6615986640310645,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Nowe Bemowo",
+          "variants": 4,
+          "tripCount": 700,
+          "stops": 18,
+          "lengthKm": 7.76,
+          "stats": {
+            "observations": 389,
+            "matched": 389,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.666416455490311,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "20",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Boernerowo",
+          "variants": 5,
+          "tripCount": 673,
+          "stops": 41,
+          "lengthKm": 17.47,
+          "stats": {
+            "observations": 858,
+            "matched": 858,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.488221566021789,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Żerań FSO",
+          "variants": 5,
+          "tripCount": 663,
+          "stops": 41,
+          "lengthKm": 17.14,
+          "stats": {
+            "observations": 841,
+            "matched": 841,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.4745066127999997,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "22",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Piaski",
+          "variants": 3,
+          "tripCount": 665,
+          "stops": 20,
+          "lengthKm": 7.83,
+          "stats": {
+            "observations": 392,
+            "matched": 392,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6081408750252462,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Pl. Starynkiewicza",
+          "variants": 3,
+          "tripCount": 661,
+          "stops": 19,
+          "lengthKm": 7.84,
+          "stats": {
+            "observations": 393,
+            "matched": 393,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.5907483952895713,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "24",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Nowe Bemowo",
+          "variants": 3,
+          "tripCount": 665,
+          "stops": 23,
+          "lengthKm": 8.8,
+          "stats": {
+            "observations": 441,
+            "matched": 441,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.5633007706455246,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Pl. Starynkiewicza",
+          "variants": 3,
+          "tripCount": 665,
+          "stops": 23,
+          "lengthKm": 9.01,
+          "stats": {
+            "observations": 451,
+            "matched": 451,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.5279355213162928,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "26",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Metro Młociny",
+          "variants": 5,
+          "tripCount": 688,
+          "stops": 34,
+          "lengthKm": 15.38,
+          "stats": {
+            "observations": 766,
+            "matched": 766,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.7506604064156868,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Kino Femina",
+          "variants": 5,
+          "tripCount": 649,
+          "stops": 35,
+          "lengthKm": 15.5,
+          "stats": {
+            "observations": 775,
+            "matched": 775,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.719854134052921,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "27",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Cm. Wolski",
+          "variants": 3,
+          "tripCount": 665,
+          "stops": 18,
+          "lengthKm": 8.02,
+          "stats": {
+            "observations": 402,
+            "matched": 402,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6182511510767192,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Metro Marymont",
+          "variants": 3,
+          "tripCount": 663,
+          "stops": 19,
+          "lengthKm": 8.09,
+          "stats": {
+            "observations": 405,
+            "matched": 405,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6225277290660234,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "28",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Dw. Wschodni (Kijowska)",
+          "variants": 6,
+          "tripCount": 641,
+          "stops": 36,
+          "lengthKm": 15.35,
+          "stats": {
+            "observations": 754,
+            "matched": 754,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.7192842959831274,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Os. Górczewska",
+          "variants": 6,
+          "tripCount": 632,
+          "stops": 33,
+          "lengthKm": 15.48,
+          "stats": {
+            "observations": 762,
+            "matched": 762,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.7477435672102526,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "31",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Metro Wierzbno",
+          "variants": 3,
+          "tripCount": 395,
+          "stops": 12,
+          "lengthKm": 3.57,
+          "stats": {
+            "observations": 180,
+            "matched": 180,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.4490282348012018,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "PKP Służewiec",
+          "variants": 3,
+          "tripCount": 395,
+          "stops": 11,
+          "lengthKm": 3.43,
+          "stats": {
+            "observations": 173,
+            "matched": 173,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 2.1080935302160966,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "36",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Pl. Narutowicza",
+          "variants": 8,
+          "tripCount": 56,
+          "stops": 24,
+          "lengthKm": 9.73,
+          "stats": {
+            "observations": 488,
+            "matched": 488,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.5996436153919984,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Metro Marymont",
+          "variants": 8,
+          "tripCount": 56,
+          "stops": 23,
+          "lengthKm": 9.44,
+          "stats": {
+            "observations": 473,
+            "matched": 473,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6054082755065036,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "67",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Stegny",
+          "variants": 3,
+          "tripCount": 664,
+          "stops": 24,
+          "lengthKm": 10.72,
+          "stats": {
+            "observations": 537,
+            "matched": 537,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.7038145448504882,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "PKP Służewiec",
+          "variants": 3,
+          "tripCount": 666,
+          "stops": 24,
+          "lengthKm": 10.72,
+          "stats": {
+            "observations": 537,
+            "matched": 537,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.8813207328845154,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "73",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Kawęczyńska - Bazylika",
+          "variants": 6,
+          "tripCount": 410,
+          "stops": 10,
+          "lengthKm": 3.6,
+          "stats": {
+            "observations": 181,
+            "matched": 181,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.7612724972659786,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Czynszowa",
+          "variants": 6,
+          "tripCount": 410,
+          "stops": 12,
+          "lengthKm": 3.95,
+          "stats": {
+            "observations": 196,
+            "matched": 196,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.670220006353336,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "76",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Miasteczko Wilanów",
+          "variants": 5,
+          "tripCount": 688,
+          "stops": 37,
+          "lengthKm": 17.83,
+          "stats": {
+            "observations": 879,
+            "matched": 879,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6193984239388188,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wiatraczna",
+          "variants": 5,
+          "tripCount": 684,
+          "stops": 36,
+          "lengthKm": 17.74,
+          "stats": {
+            "observations": 875,
+            "matched": 875,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.7536610731365867,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "M1",
+      "mode": "tram",
+      "color": "#0000BB",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Młociny",
+          "variants": 1,
+          "tripCount": 4,
+          "stops": 21,
+          "lengthKm": 21.65,
+          "stats": {
+            "observations": 856,
+            "matched": 856,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 8.601838281492887,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Kabaty",
+          "variants": 1,
+          "tripCount": 4,
+          "stops": 21,
+          "lengthKm": 21.65,
+          "stats": {
+            "observations": 856,
+            "matched": 856,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 8.61641504464732,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "M2",
+      "mode": "tram",
+      "color": "#BB0000",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Bródno",
+          "variants": 1,
+          "tripCount": 4,
+          "stops": 18,
+          "lengthKm": 17.95,
+          "stats": {
+            "observations": 789,
+            "matched": 789,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 7.499308277546102,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Bemowo",
+          "variants": 1,
+          "tripCount": 4,
+          "stops": 18,
+          "lengthKm": 17.95,
+          "stats": {
+            "observations": 789,
+            "matched": 789,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 7.499100142738894,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "S1",
+      "mode": "tram",
+      "color": "#E84A4B",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Otwock",
+          "variants": 5,
+          "tripCount": 152,
+          "stops": 24,
+          "lengthKm": 43.41,
+          "stats": {
+            "observations": 1614,
+            "matched": 1614,
+            "noCandidates": 0,
+            "viterbiBreaks": 1,
+            "bridged": 0,
+            "rawStretchCount": 1,
+            "rawMeters": 20,
+            "meanError": 4.529410474272225,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Pruszków",
+          "variants": 4,
+          "tripCount": 160,
+          "stops": 24,
+          "lengthKm": 43.09,
+          "stats": {
+            "observations": 1583,
+            "matched": 1583,
+            "noCandidates": 0,
+            "viterbiBreaks": 1,
+            "bridged": 0,
+            "rawStretchCount": 1,
+            "rawMeters": 20,
+            "meanError": 4.654091963612928,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "S2",
+      "mode": "tram",
+      "color": "#2E8EC8",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Sulejówek Miłosna",
+          "variants": 4,
+          "tripCount": 296,
+          "stops": 16,
+          "lengthKm": 35.06,
+          "stats": {
+            "observations": 1070,
+            "matched": 1070,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 4.494807606533322,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Warszawa Lotnisko Chopina",
+          "variants": 3,
+          "tripCount": 301,
+          "stops": 16,
+          "lengthKm": 35.06,
+          "stats": {
+            "observations": 1070,
+            "matched": 1070,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 4.497790066462754,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "S3",
+      "mode": "tram",
+      "color": "#FFAC01",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Legionowo",
+          "variants": 3,
+          "tripCount": 136,
+          "stops": 15,
+          "lengthKm": 37.95,
+          "stats": {
+            "observations": 985,
+            "matched": 985,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 3.3477112902737196,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Warszawa Lotnisko Chopina",
+          "variants": 2,
+          "tripCount": 144,
+          "stops": 15,
+          "lengthKm": 38,
+          "stats": {
+            "observations": 985,
+            "matched": 985,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 3.3455364700793924,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "S4",
+      "mode": "tram",
+      "color": "#2F7B20",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Zegrze Południowe",
+          "variants": 5,
+          "tripCount": 119,
+          "stops": 27,
+          "lengthKm": 52.91,
+          "stats": {
+            "observations": 1228,
+            "matched": 1228,
+            "noCandidates": 0,
+            "viterbiBreaks": 1,
+            "bridged": 0,
+            "rawStretchCount": 1,
+            "rawMeters": 20,
+            "meanError": 2.8527327357710126,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Piaseczno",
+          "variants": 5,
+          "tripCount": 114,
+          "stops": 27,
+          "lengthKm": 52.93,
+          "stats": {
+            "observations": 1228,
+            "matched": 1228,
+            "noCandidates": 0,
+            "viterbiBreaks": 1,
+            "bridged": 0,
+            "rawStretchCount": 1,
+            "rawMeters": 20,
+            "meanError": 2.7775826271452555,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "S40",
+      "mode": "tram",
+      "color": "#70AD46",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Radzymin",
+          "variants": 4,
+          "tripCount": 60,
+          "stops": 28,
+          "lengthKm": 63.66,
+          "stats": {
+            "observations": 1257,
+            "matched": 1257,
+            "noCandidates": 0,
+            "viterbiBreaks": 1,
+            "bridged": 0,
+            "rawStretchCount": 1,
+            "rawMeters": 20,
+            "meanError": 2.8917693178053825,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Piaseczno",
+          "variants": 4,
+          "tripCount": 70,
+          "stops": 28,
+          "lengthKm": 63.68,
+          "stats": {
+            "observations": 1257,
+            "matched": 1257,
+            "noCandidates": 0,
+            "viterbiBreaks": 1,
+            "bridged": 0,
+            "rawStretchCount": 1,
+            "rawMeters": 20,
+            "meanError": 2.813306631984813,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "T",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Zjazd do zajezdni Mokotów",
+          "variants": 5,
+          "tripCount": 4,
+          "stops": 26,
+          "lengthKm": 11.42,
+          "stats": {
+            "observations": 571,
+            "matched": 571,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.733219809725151,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Czynszowa",
+          "variants": 4,
+          "tripCount": 18,
+          "stops": 28,
+          "lengthKm": 10.84,
+          "stats": {
+            "observations": 529,
+            "matched": 529,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.4716865836065822,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "line": "WKD",
+      "mode": "tram",
+      "color": "#a518a3",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Warszawa Śródmieście WKD",
+          "variants": 15,
+          "tripCount": 343,
+          "stops": 26,
+          "lengthKm": 32.4,
+          "stats": {
+            "observations": 615,
+            "matched": 615,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.9820476619834797,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Grodzisk Mazowiecki Radońska",
+          "variants": 14,
+          "tripCount": 234,
+          "stops": 26,
+          "lengthKm": 32.4,
+          "stats": {
+            "observations": 615,
+            "matched": 615,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.9726564482295522,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
       "line": "N01",
       "mode": "bus",
       "color": "#000000",
@@ -19352,1756 +21102,6 @@
         }
       ],
       "rank": 2
-    },
-    {
-      "line": "1",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "P+R Al. Krakowska",
-          "variants": 13,
-          "tripCount": 643,
-          "stops": 41,
-          "lengthKm": 18.09,
-          "stats": {
-            "observations": 878,
-            "matched": 878,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.767587304363167,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Annopol",
-          "variants": 14,
-          "tripCount": 657,
-          "stops": 44,
-          "lengthKm": 18.36,
-          "stats": {
-            "observations": 891,
-            "matched": 891,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.7088019063084272,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "2",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Metro Młociny",
-          "variants": 8,
-          "tripCount": 518,
-          "stops": 11,
-          "lengthKm": 7.14,
-          "stats": {
-            "observations": 358,
-            "matched": 358,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.7842920495024313,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Nowodwory",
-          "variants": 7,
-          "tripCount": 538,
-          "stops": 13,
-          "lengthKm": 7.42,
-          "stats": {
-            "observations": 369,
-            "matched": 369,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.7910412952021915,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "3",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Gocławek",
-          "variants": 4,
-          "tripCount": 633,
-          "stops": 30,
-          "lengthKm": 12.31,
-          "stats": {
-            "observations": 585,
-            "matched": 585,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.701194966081518,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Annopol",
-          "variants": 4,
-          "tripCount": 638,
-          "stops": 30,
-          "lengthKm": 12.26,
-          "stats": {
-            "observations": 583,
-            "matched": 583,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6727152286925666,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "4",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Metro Wilanowska",
-          "variants": 5,
-          "tripCount": 681,
-          "stops": 37,
-          "lengthKm": 17.46,
-          "stats": {
-            "observations": 874,
-            "matched": 874,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.809258835016493,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Żerań Wschodni",
-          "variants": 5,
-          "tripCount": 674,
-          "stops": 36,
-          "lengthKm": 17.83,
-          "stats": {
-            "observations": 893,
-            "matched": 893,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.7778719872969213,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "6",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Gocławek",
-          "variants": 5,
-          "tripCount": 665,
-          "stops": 43,
-          "lengthKm": 18.08,
-          "stats": {
-            "observations": 855,
-            "matched": 855,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6835945223506157,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Metro Młociny",
-          "variants": 5,
-          "tripCount": 670,
-          "stops": 43,
-          "lengthKm": 17.95,
-          "stats": {
-            "observations": 854,
-            "matched": 854,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.650256287239086,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "7",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Kawęczyńska - Bazylika",
-          "variants": 3,
-          "tripCount": 669,
-          "stops": 19,
-          "lengthKm": 8.06,
-          "stats": {
-            "observations": 300,
-            "matched": 300,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 2.6117161865068357,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Gocławek",
-          "variants": 3,
-          "tripCount": 676,
-          "stops": 20,
-          "lengthKm": 8.45,
-          "stats": {
-            "observations": 318,
-            "matched": 318,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 2.7133347576955895,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "9",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "P+R Al. Krakowska",
-          "variants": 6,
-          "tripCount": 1452,
-          "stops": 22,
-          "lengthKm": 8.79,
-          "stats": {
-            "observations": 413,
-            "matched": 413,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.7292277661264048,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Muzeum Narodowe",
-          "variants": 7,
-          "tripCount": 1462,
-          "stops": 23,
-          "lengthKm": 8.88,
-          "stats": {
-            "observations": 417,
-            "matched": 417,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6754075356022176,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "10",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Metro Wilanowska",
-          "variants": 6,
-          "tripCount": 681,
-          "stops": 34,
-          "lengthKm": 15.58,
-          "stats": {
-            "observations": 767,
-            "matched": 767,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.7188867151988985,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Os. Górczewska",
-          "variants": 6,
-          "tripCount": 672,
-          "stops": 35,
-          "lengthKm": 15.83,
-          "stats": {
-            "observations": 780,
-            "matched": 780,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.7208543158450544,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "11",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Sielce",
-          "variants": 8,
-          "tripCount": 195,
-          "stops": 33,
-          "lengthKm": 16.08,
-          "stats": {
-            "observations": 791,
-            "matched": 791,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6831404450788487,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Nowe Bemowo",
-          "variants": 8,
-          "tripCount": 215,
-          "stops": 34,
-          "lengthKm": 16.07,
-          "stats": {
-            "observations": 790,
-            "matched": 790,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6799098827623276,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "14",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Miasteczko Wilanów",
-          "variants": 5,
-          "tripCount": 451,
-          "stops": 26,
-          "lengthKm": 12.31,
-          "stats": {
-            "observations": 616,
-            "matched": 616,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.598730255082741,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Banacha",
-          "variants": 3,
-          "tripCount": 666,
-          "stops": 25,
-          "lengthKm": 12.26,
-          "stats": {
-            "observations": 614,
-            "matched": 614,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.599524542283172,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "15",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "P+R Al. Krakowska",
-          "variants": 4,
-          "tripCount": 617,
-          "stops": 35,
-          "lengthKm": 14.73,
-          "stats": {
-            "observations": 723,
-            "matched": 723,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6849408045830763,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Marymont-Potok",
-          "variants": 7,
-          "tripCount": 419,
-          "stops": 37,
-          "lengthKm": 14.99,
-          "stats": {
-            "observations": 736,
-            "matched": 736,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6502429974278712,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "16",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Miasteczko Wilanów",
-          "variants": 3,
-          "tripCount": 628,
-          "stops": 44,
-          "lengthKm": 20.93,
-          "stats": {
-            "observations": 1048,
-            "matched": 1048,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6177416982820887,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Metro Młociny",
-          "variants": 4,
-          "tripCount": 623,
-          "stops": 42,
-          "lengthKm": 20.67,
-          "stats": {
-            "observations": 1035,
-            "matched": 1035,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.639804566874748,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "17",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Tarchomin Kościelny",
-          "variants": 5,
-          "tripCount": 682,
-          "stops": 50,
-          "lengthKm": 23.15,
-          "stats": {
-            "observations": 1158,
-            "matched": 1158,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6849214582624799,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "PKP Służewiec",
-          "variants": 5,
-          "tripCount": 698,
-          "stops": 50,
-          "lengthKm": 22.95,
-          "stats": {
-            "observations": 1149,
-            "matched": 1149,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.7591981437402366,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "18",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Żerań FSO",
-          "variants": 5,
-          "tripCount": 668,
-          "stops": 40,
-          "lengthKm": 17.64,
-          "stats": {
-            "observations": 883,
-            "matched": 883,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6495894922972927,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "PKP Służewiec",
-          "variants": 5,
-          "tripCount": 661,
-          "stops": 42,
-          "lengthKm": 17.69,
-          "stats": {
-            "observations": 886,
-            "matched": 886,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.7677237621191462,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "19",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Kino Femina",
-          "variants": 5,
-          "tripCount": 684,
-          "stops": 17,
-          "lengthKm": 7.67,
-          "stats": {
-            "observations": 385,
-            "matched": 385,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6615986640310645,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Nowe Bemowo",
-          "variants": 4,
-          "tripCount": 700,
-          "stops": 18,
-          "lengthKm": 7.76,
-          "stats": {
-            "observations": 389,
-            "matched": 389,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.666416455490311,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "20",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Boernerowo",
-          "variants": 5,
-          "tripCount": 673,
-          "stops": 41,
-          "lengthKm": 17.47,
-          "stats": {
-            "observations": 858,
-            "matched": 858,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.488221566021789,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Żerań FSO",
-          "variants": 5,
-          "tripCount": 663,
-          "stops": 41,
-          "lengthKm": 17.14,
-          "stats": {
-            "observations": 841,
-            "matched": 841,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.4745066127999997,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "22",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Piaski",
-          "variants": 3,
-          "tripCount": 665,
-          "stops": 20,
-          "lengthKm": 7.83,
-          "stats": {
-            "observations": 392,
-            "matched": 392,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6081408750252462,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Pl. Starynkiewicza",
-          "variants": 3,
-          "tripCount": 661,
-          "stops": 19,
-          "lengthKm": 7.84,
-          "stats": {
-            "observations": 393,
-            "matched": 393,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.5907483952895713,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "24",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Nowe Bemowo",
-          "variants": 3,
-          "tripCount": 665,
-          "stops": 23,
-          "lengthKm": 8.8,
-          "stats": {
-            "observations": 441,
-            "matched": 441,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.5633007706455246,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Pl. Starynkiewicza",
-          "variants": 3,
-          "tripCount": 665,
-          "stops": 23,
-          "lengthKm": 9.01,
-          "stats": {
-            "observations": 451,
-            "matched": 451,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.5279355213162928,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "26",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Metro Młociny",
-          "variants": 5,
-          "tripCount": 688,
-          "stops": 34,
-          "lengthKm": 15.38,
-          "stats": {
-            "observations": 766,
-            "matched": 766,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.7506604064156868,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Kino Femina",
-          "variants": 5,
-          "tripCount": 649,
-          "stops": 35,
-          "lengthKm": 15.5,
-          "stats": {
-            "observations": 775,
-            "matched": 775,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.719854134052921,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "27",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Cm. Wolski",
-          "variants": 3,
-          "tripCount": 665,
-          "stops": 18,
-          "lengthKm": 8.02,
-          "stats": {
-            "observations": 402,
-            "matched": 402,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6182511510767192,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Metro Marymont",
-          "variants": 3,
-          "tripCount": 663,
-          "stops": 19,
-          "lengthKm": 8.09,
-          "stats": {
-            "observations": 405,
-            "matched": 405,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6225277290660234,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "28",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Dw. Wschodni (Kijowska)",
-          "variants": 6,
-          "tripCount": 641,
-          "stops": 36,
-          "lengthKm": 15.35,
-          "stats": {
-            "observations": 754,
-            "matched": 754,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.7192842959831274,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Os. Górczewska",
-          "variants": 6,
-          "tripCount": 632,
-          "stops": 33,
-          "lengthKm": 15.48,
-          "stats": {
-            "observations": 762,
-            "matched": 762,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.7477435672102526,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "31",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Metro Wierzbno",
-          "variants": 3,
-          "tripCount": 395,
-          "stops": 12,
-          "lengthKm": 3.57,
-          "stats": {
-            "observations": 180,
-            "matched": 180,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.4490282348012018,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "PKP Służewiec",
-          "variants": 3,
-          "tripCount": 395,
-          "stops": 11,
-          "lengthKm": 3.43,
-          "stats": {
-            "observations": 173,
-            "matched": 173,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 2.1080935302160966,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "36",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Pl. Narutowicza",
-          "variants": 8,
-          "tripCount": 56,
-          "stops": 24,
-          "lengthKm": 9.73,
-          "stats": {
-            "observations": 488,
-            "matched": 488,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.5996436153919984,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Metro Marymont",
-          "variants": 8,
-          "tripCount": 56,
-          "stops": 23,
-          "lengthKm": 9.44,
-          "stats": {
-            "observations": 473,
-            "matched": 473,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6054082755065036,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "67",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Stegny",
-          "variants": 3,
-          "tripCount": 664,
-          "stops": 24,
-          "lengthKm": 10.72,
-          "stats": {
-            "observations": 537,
-            "matched": 537,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.7038145448504882,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "PKP Służewiec",
-          "variants": 3,
-          "tripCount": 666,
-          "stops": 24,
-          "lengthKm": 10.72,
-          "stats": {
-            "observations": 537,
-            "matched": 537,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.8813207328845154,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "73",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Kawęczyńska - Bazylika",
-          "variants": 6,
-          "tripCount": 410,
-          "stops": 10,
-          "lengthKm": 3.6,
-          "stats": {
-            "observations": 181,
-            "matched": 181,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.7612724972659786,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Czynszowa",
-          "variants": 6,
-          "tripCount": 410,
-          "stops": 12,
-          "lengthKm": 3.95,
-          "stats": {
-            "observations": 196,
-            "matched": 196,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.670220006353336,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "76",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Miasteczko Wilanów",
-          "variants": 5,
-          "tripCount": 688,
-          "stops": 37,
-          "lengthKm": 17.83,
-          "stats": {
-            "observations": 879,
-            "matched": 879,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6193984239388188,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wiatraczna",
-          "variants": 5,
-          "tripCount": 684,
-          "stops": 36,
-          "lengthKm": 17.74,
-          "stats": {
-            "observations": 875,
-            "matched": 875,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.7536610731365867,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "M1",
-      "mode": "tram",
-      "color": "#0000BB",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Młociny",
-          "variants": 1,
-          "tripCount": 4,
-          "stops": 21,
-          "lengthKm": 21.65,
-          "stats": {
-            "observations": 856,
-            "matched": 856,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 8.601838281492887,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Kabaty",
-          "variants": 1,
-          "tripCount": 4,
-          "stops": 21,
-          "lengthKm": 21.65,
-          "stats": {
-            "observations": 856,
-            "matched": 856,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 8.61641504464732,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "M2",
-      "mode": "tram",
-      "color": "#BB0000",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Bródno",
-          "variants": 1,
-          "tripCount": 4,
-          "stops": 18,
-          "lengthKm": 17.95,
-          "stats": {
-            "observations": 789,
-            "matched": 789,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 7.499308277546102,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Bemowo",
-          "variants": 1,
-          "tripCount": 4,
-          "stops": 18,
-          "lengthKm": 17.95,
-          "stats": {
-            "observations": 789,
-            "matched": 789,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 7.499100142738894,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "S1",
-      "mode": "tram",
-      "color": "#E84A4B",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Otwock",
-          "variants": 5,
-          "tripCount": 152,
-          "stops": 24,
-          "lengthKm": 43.41,
-          "stats": {
-            "observations": 1614,
-            "matched": 1614,
-            "noCandidates": 0,
-            "viterbiBreaks": 1,
-            "bridged": 0,
-            "rawStretchCount": 1,
-            "rawMeters": 20,
-            "meanError": 4.529410474272225,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Pruszków",
-          "variants": 4,
-          "tripCount": 160,
-          "stops": 24,
-          "lengthKm": 43.09,
-          "stats": {
-            "observations": 1583,
-            "matched": 1583,
-            "noCandidates": 0,
-            "viterbiBreaks": 1,
-            "bridged": 0,
-            "rawStretchCount": 1,
-            "rawMeters": 20,
-            "meanError": 4.654091963612928,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "S2",
-      "mode": "tram",
-      "color": "#2E8EC8",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Sulejówek Miłosna",
-          "variants": 4,
-          "tripCount": 296,
-          "stops": 16,
-          "lengthKm": 35.06,
-          "stats": {
-            "observations": 1070,
-            "matched": 1070,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 4.494807606533322,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Warszawa Lotnisko Chopina",
-          "variants": 3,
-          "tripCount": 301,
-          "stops": 16,
-          "lengthKm": 35.06,
-          "stats": {
-            "observations": 1070,
-            "matched": 1070,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 4.497790066462754,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "S3",
-      "mode": "tram",
-      "color": "#FFAC01",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Legionowo",
-          "variants": 3,
-          "tripCount": 136,
-          "stops": 15,
-          "lengthKm": 37.95,
-          "stats": {
-            "observations": 985,
-            "matched": 985,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 3.3477112902737196,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Warszawa Lotnisko Chopina",
-          "variants": 2,
-          "tripCount": 144,
-          "stops": 15,
-          "lengthKm": 38,
-          "stats": {
-            "observations": 985,
-            "matched": 985,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 3.3455364700793924,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "S4",
-      "mode": "tram",
-      "color": "#2F7B20",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Zegrze Południowe",
-          "variants": 5,
-          "tripCount": 119,
-          "stops": 27,
-          "lengthKm": 52.91,
-          "stats": {
-            "observations": 1228,
-            "matched": 1228,
-            "noCandidates": 0,
-            "viterbiBreaks": 1,
-            "bridged": 0,
-            "rawStretchCount": 1,
-            "rawMeters": 20,
-            "meanError": 2.8527327357710126,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Piaseczno",
-          "variants": 5,
-          "tripCount": 114,
-          "stops": 27,
-          "lengthKm": 52.93,
-          "stats": {
-            "observations": 1228,
-            "matched": 1228,
-            "noCandidates": 0,
-            "viterbiBreaks": 1,
-            "bridged": 0,
-            "rawStretchCount": 1,
-            "rawMeters": 20,
-            "meanError": 2.7775826271452555,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "S40",
-      "mode": "tram",
-      "color": "#70AD46",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Radzymin",
-          "variants": 4,
-          "tripCount": 60,
-          "stops": 28,
-          "lengthKm": 63.66,
-          "stats": {
-            "observations": 1257,
-            "matched": 1257,
-            "noCandidates": 0,
-            "viterbiBreaks": 1,
-            "bridged": 0,
-            "rawStretchCount": 1,
-            "rawMeters": 20,
-            "meanError": 2.8917693178053825,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Piaseczno",
-          "variants": 4,
-          "tripCount": 70,
-          "stops": 28,
-          "lengthKm": 63.68,
-          "stats": {
-            "observations": 1257,
-            "matched": 1257,
-            "noCandidates": 0,
-            "viterbiBreaks": 1,
-            "bridged": 0,
-            "rawStretchCount": 1,
-            "rawMeters": 20,
-            "meanError": 2.813306631984813,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "T",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Zjazd do zajezdni Mokotów",
-          "variants": 5,
-          "tripCount": 4,
-          "stops": 26,
-          "lengthKm": 11.42,
-          "stats": {
-            "observations": 571,
-            "matched": 571,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.733219809725151,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Czynszowa",
-          "variants": 4,
-          "tripCount": 18,
-          "stops": 28,
-          "lengthKm": 10.84,
-          "stats": {
-            "observations": 529,
-            "matched": 529,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.4716865836065822,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "line": "WKD",
-      "mode": "tram",
-      "color": "#a518a3",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Warszawa Śródmieście WKD",
-          "variants": 15,
-          "tripCount": 343,
-          "stops": 26,
-          "lengthKm": 32.4,
-          "stats": {
-            "observations": 615,
-            "matched": 615,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.9820476619834797,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Grodzisk Mazowiecki Radońska",
-          "variants": 14,
-          "tripCount": 234,
-          "stops": 26,
-          "lengthKm": 32.4,
-          "stats": {
-            "observations": 615,
-            "matched": 615,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.9726564482295522,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1
     }
   ]
 }
