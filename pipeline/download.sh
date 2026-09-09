@@ -8,7 +8,7 @@
 # Modes are separated by route_type at build time.
 set -euo pipefail
 cd "$(dirname "$0")/.."
-mkdir -p data/gtfs-ztm data/gtfs-gpa data/gtfs-wkd data/osm web/vendor
+mkdir -p data/gtfs-ztm data/gtfs-gpa data/gtfs-wkd data/gtfs-pruszkow data/gtfs-legionowo data/osm web/vendor
 
 # A downloaded extract is only accepted if it PARSES and carries a plausible
 # number of elements. `grep -q '"elements"'` — the guard this family used
@@ -62,60 +62,40 @@ fetch_girlcat data/gtfs-sulejowek sulejowek      # Sulejówek A1/A2 + Wiązowna 
 fetch_girlcat data/gtfs-wieliszew wieliszew      # Wieliszew W1–W3
 fetch_girlcat data/gtfs-zabki     zabki          # Ząbki Z1–Z4M (no shapes)
 
-# 2) OSM — roadways over the whole region (GTFS stops extent 51.92–52.49 N,
-#    20.24–21.46 E plus margin: the ZTM zone-2 communes on every side and
-#    the Grodzisk county in the south-west)
-if [ ! -f data/osm/warsaw.json ]; then
-  echo "== Overpass (roads) =="
-  Q='[out:json][timeout:900][maxsize:1500000000];way(51.87,20.18,52.54,21.52)["highway"~"^(motorway|trunk|primary|secondary|tertiary|unclassified|residential|living_street|service|busway|construction|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link)$"];out geom;'
-  ok=0
-  for EP in "https://overpass-api.de/api/interpreter" \
-            "https://maps.mail.ru/osm/tools/overpass/api/interpreter" \
-            "https://overpass.kumi.systems/api/interpreter"; do
-    echo "-- $EP"
-    if curl -fsS --max-time 900 -o data/osm/warsaw.json --data-urlencode "data=$Q" "$EP" \
-       && ok_json "data/osm/warsaw.json" 2000; then
-      ok=1; break
-    fi
-  done
-  [ "$ok" = 1 ] || { rm -f data/osm/warsaw.json; echo "Overpass: all mirrors failed" >&2; exit 1; }
+# 1z) Pruszków — the town's ten lines (1–10B). No producer GTFS exists: the
+#     town publishes PDF sheets and points riders at kiedyPrzyjedzie, whose
+#     data cdn.zbiorkom.live republishes as a plain feed. No shapes.
+if [ ! -f data/gtfs-pruszkow/routes.txt ]; then
+  echo "== Pruszków =="
+  curl -fL --retry 3 --max-time 300 -o data/gtfs-pruszkow.zip "https://cdn.zbiorkom.live/gtfs/warsaw-pruszkow.zip"
+  unzip -o data/gtfs-pruszkow.zip -d data/gtfs-pruszkow
 fi
 
-# 2a) OSM — the eastern strip added for the Mińsk county lines (their stops
-#     reach 21.86 E, the first extract stopped at 21.52). Merged with the main
-#     extract at build time (cfg.osmFiles), so the big file is never refetched.
-if [ ! -f data/osm/warsaw-east.json ]; then
-  echo "== Overpass (roads, eastern strip) =="
-  Q='[out:json][timeout:900][maxsize:1500000000];way(51.87,21.50,52.54,21.92)["highway"~"^(motorway|trunk|primary|secondary|tertiary|unclassified|residential|living_street|service|busway|construction|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link)$"];out geom;'
-  ok=0
-  for EP in "https://overpass-api.de/api/interpreter" \
-            "https://maps.mail.ru/osm/tools/overpass/api/interpreter" \
-            "https://overpass.kumi.systems/api/interpreter"; do
-    echo "-- $EP"
-    if curl -fsS --max-time 900 -o data/osm/warsaw-east.json --data-urlencode "data=$Q" "$EP" \
-       && ok_json "data/osm/warsaw-east.json" 2000; then
-      ok=1; break
-    fi
-  done
-  [ "$ok" = 1 ] || { rm -f data/osm/warsaw-east.json; echo "Overpass (east): all mirrors failed" >&2; exit 1; }
+# 1y) Powiat legionowski — the county's six free lines 7P–12P. No GTFS
+#     anywhere; pipeline/kp-legionowo-gtfs.py turns the county's own
+#     KiedyPrzyjedzie instance into one. The ZTM lines that also serve
+#     Legionowo (723, 731, 736, N63 and the L family) are already in the ZTM
+#     feed above and are filtered out there.
+if [ ! -f data/gtfs-legionowo/routes.txt ]; then
+  echo "== Powiat legionowski via KiedyPrzyjedzie =="
+  python3 pipeline/kp-legionowo-gtfs.py data/gtfs-legionowo
 fi
 
-# 2b) OSM — rails for the tram/metro/SKM+WKD modes: tram tracks, metro tunnels
-#     (railway=subway) and rail/light_rail for the SKM and the WKD. Same bbox.
-if [ ! -f data/osm/warsaw-rail.json ]; then
-  echo "== Overpass (rails) =="
-  QT='[out:json][timeout:600][maxsize:1000000000];way(51.87,20.18,52.54,21.52)["railway"~"^(subway|tram|light_rail|rail)$"];out geom;'
-  ok=0
-  for EP in "https://overpass-api.de/api/interpreter" \
-            "https://maps.mail.ru/osm/tools/overpass/api/interpreter" \
-            "https://overpass.kumi.systems/api/interpreter"; do
-    echo "-- $EP"
-    if curl -fsS --max-time 300 -o data/osm/warsaw-rail.json --data-urlencode "data=$QT" "$EP" \
-       && ok_json "data/osm/warsaw-rail.json" 40; then
-      ok=1; break
-    fi
-  done
-  [ "$ok" = 1 ] || { rm -f data/osm/warsaw-rail.json; echo "Overpass (rails): all mirrors failed" >&2; exit 1; }
+# 2) OSM — from the Geofabrik mazowieckie extract, not Overpass. On 9.09.2026
+#    every public mirror answered these queries with 504 for an hour (the wall
+#    Berlin, London, São Paulo and Vienna hit before), so the cuts are made
+#    locally: pipeline/pbf-cut.py (needs `pip3 install --user osmium`) writes
+#    exactly the JSON Overpass would have returned, node ids included, for the
+#    same three boxes — the region's roads, the eastern strip the Mińsk county
+#    lines need, and the rails (tram, metro, and rail for the SKM and WKD).
+if [ ! -f data/osm/warsaw.json ] || [ ! -f data/osm/warsaw-east.json ] || [ ! -f data/osm/warsaw-rail.json ]; then
+  python3 -c "import osmium" 2>/dev/null || { echo "brak pakietu osmium — zainstaluj: pip3 install --user osmium" >&2; exit 1; }
+  if [ ! -f data/mazowieckie-latest.osm.pbf ]; then
+    echo "== Geofabrik mazowieckie-latest.osm.pbf =="
+    curl -fL --retry 5 --retry-delay 5 -C - --max-time 3600 -o data/mazowieckie-latest.osm.pbf       "https://download.geofabrik.de/europe/poland/mazowieckie-latest.osm.pbf"
+  fi
+  echo "== cutting OSM out of the extract =="
+  python3 pipeline/pbf-cut.py
 fi
 
 # 3) MapLibre GL (vendored, no CDN at runtime)

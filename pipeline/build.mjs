@@ -62,8 +62,11 @@ const NIGHT = /^N\d/;
 const TROLLEYS = new Set();
 const lineRank = (k) => (TROLLEYS.has(k) ? 0
   : NIGHT.test(typeof LBL !== 'undefined' && LBL.has(k) ? LBL.get(k) : k) ? 2 : 1);
+// sorting happens on the PRINTED number: an operator prefix in the key would
+// otherwise split one operator's list in two
+const dispOf = (s) => (typeof LBL !== 'undefined' && LBL.has(s) ? LBL.get(s) : s);
 const numSort = (a, b) => {
-  const A = keyParts(a), B = keyParts(b);
+  const A = keyParts(dispOf(a)), B = keyParts(dispOf(b));
   return lineRank(a) - lineRank(b) || A[0].localeCompare(B[0]) || (A[1] - B[1]) || A[2].localeCompare(B[2]);
 };
 function round6(v) { return Math.round(v * 1e6) / 1e6; }
@@ -130,6 +133,54 @@ const busList = busArgs.filter((a) => a !== '--all');
 // 0 = tram, 1 = metro, 2 = SKM riding the rail mode in their official colours;
 // GPA joins the bus cfg as a second feed, the WKD feed the rail cfg). Without the filter `--all` on the bus mode would swallow the
 // rail lines too.
+// LINE KEYS across the twelve operators on this sheet. Pruszków numbers its
+// buses 1–10B, Łomianki its 1–3, and ZTM's own trams run 1–35 — the same
+// digits on different pavements. So a number used by MORE THAN ONE operator
+// carries that operator's code in the KEY (pru:1, lom:1) and prints bare on
+// the street through LBL — the Randstad rule. ZTM is the home network of this
+// sheet and keeps its numbers as they are; a guest takes the prefix wherever
+// its number is already spoken for.
+const LBL = new Map();
+const LINE_OP = new Map();          // line key → operator code, for the panel
+const OP_NAME = {
+  ztm: 'ZTM Warszawa',
+  gpa: 'GPA — Grodzisk Mazowiecki',
+  pru: 'Pruszków',
+  pleg: 'Powiat legionowski',
+  lom: 'Łomianki',
+  otw: 'Otwock',
+  min: 'Powiat miński',
+  rdz: 'Radzymin',
+  sul: 'Sulejówek & Wiązowna',
+  wlw: 'Wieliszew',
+  zab: 'Ząbki',
+  wkd: 'WKD',
+};
+const FEED_DIRS = [
+  ['ztm', 'data/gtfs-ztm'], ['gpa', 'data/gtfs-gpa'], ['pru', 'data/gtfs-pruszkow'],
+  ['pleg', 'data/gtfs-legionowo'], ['lom', 'data/gtfs-lomianki'], ['otw', 'data/gtfs-otwock'],
+  ['min', 'data/gtfs-minsk'], ['rdz', 'data/gtfs-radzymin'], ['sul', 'data/gtfs-sulejowek'],
+  ['wlw', 'data/gtfs-wieliszew'], ['zab', 'data/gtfs-zabki'], ['wkd', 'data/gtfs-wkd'],
+];
+const numOwners = new Map();
+for (const [tag, dir] of FEED_DIRS) {
+  if (!existsSync(join(ROOT, dir, 'routes.txt'))) continue;
+  for (const r of await readCsv(join(ROOT, dir, 'routes.txt'))) {
+    const sn = (r.route_short_name || '').trim();
+    if (!sn) continue;
+    if (!numOwners.has(sn)) numOwners.set(sn, new Set());
+    numOwners.get(sn).add(tag);
+  }
+}
+const lineKey = (tag) => (sn) => {
+  if (!sn) return null;
+  const owners = numOwners.get(sn);
+  const k = (tag !== 'ztm' && owners && owners.size > 1) ? `${tag}:${sn}` : sn;
+  if (k !== sn) LBL.set(k, sn);
+  LINE_OP.set(k, tag);
+  return k;
+};
+
 const MODES = [{
   mode: 'bus', label: 'buses', osmFile: 'data/osm/warsaw.json',
   graphMode: 'road', color: '#0059a9', colorDark: '#00294f',
@@ -138,28 +189,38 @@ const MODES = [{
     // ZTM Warszawa (WTP) — Mikołaj Kuranowski's GTFS of the official timetables
     // skipRoute: the Z lines (Z21, Z-8, …) are rail-replacement buses during
     // track works — the same rule as Budapest's pótló and Paris' Remplacement
-    { tag: 'ztm', dir: 'data/gtfs-ztm', mapKey: (sn) => sn, routeTypes: ['3'],
+    { tag: 'ztm', dir: 'data/gtfs-ztm', mapKey: lineKey('ztm'), routeTypes: ['3'],
       skipRoute: (r) => /^Z-?\d/.test((r.route_short_name || '').trim()) },
     // GPA — Grodziskie Przewozy Autobusowe (Grodzisk Mazowiecki county), the
     // second operator on this sheet; its numbers (0–98, C1, PGM) never collide
     // with ZTM's three-digit buses. No shapes, no direction_id — the stop
     // sequence is the observation and the headsign the direction key.
-    { tag: 'gpa', dir: 'data/gtfs-gpa', mapKey: (sn) => sn, routeTypes: ['3'],
+    { tag: 'gpa', dir: 'data/gtfs-gpa', mapKey: lineKey('gpa'), routeTypes: ['3'],
       skipRoute: (r) => /^Z-?\d/.test((r.route_short_name || '').trim()) },
+    // Pruszków — the town's own ten lines (1–10B). No producer GTFS: the town
+    // publishes PDFs and points riders at kiedyPrzyjedzie, whose feed
+    // cdn.zbiorkom.live republishes. No shapes, so the stop sequence is the
+    // observation.
+    { tag: 'pru', dir: 'data/gtfs-pruszkow', mapKey: lineKey('pru'), routeTypes: ['3'] },
+    // Powiat legionowski — the county's six free lines 7P–12P, scraped from
+    // its KiedyPrzyjedzie instance by pipeline/kp-legionowo-gtfs.py. The ZTM
+    // lines that also serve Legionowo (723, 731, 736, N63 and the L family)
+    // are already here from ZTM's own feed and are filtered out there.
+    { tag: 'pleg', dir: 'data/gtfs-legionowo', mapKey: lineKey('pleg'), routeTypes: ['3'] },
     // The commune networks (files.girlc.at, CC0; generated from the operators'
     // T4B/KiedyPrzyjedzie timetables by lz). Shapes everywhere except Ząbki;
     // direction_id nowhere — the headsign is the direction key. Otwock ships a
     // synthetic ".M1+M2+M3" route (the three city lines as one timetable
     // sheet) — skipped, the real M1/M2/M3 routes carry the same trips.
-    { tag: 'lom', dir: 'data/gtfs-lomianki', mapKey: (sn) => sn, routeTypes: ['3'] },
-    { tag: 'otw', dir: 'data/gtfs-otwock', mapKey: (sn) => sn, routeTypes: ['3'],
+    { tag: 'lom', dir: 'data/gtfs-lomianki', mapKey: lineKey('lom'), routeTypes: ['3'] },
+    { tag: 'otw', dir: 'data/gtfs-otwock', mapKey: lineKey('otw'), routeTypes: ['3'],
       skipRoute: (r) => /^\./.test((r.route_short_name || '').trim()) },
-    { tag: 'min', dir: 'data/gtfs-minsk', mapKey: (sn) => sn, routeTypes: ['3'] },
-    { tag: 'rdz', dir: 'data/gtfs-radzymin', mapKey: (sn) => sn, routeTypes: ['3'],
+    { tag: 'min', dir: 'data/gtfs-minsk', mapKey: lineKey('min'), routeTypes: ['3'] },
+    { tag: 'rdz', dir: 'data/gtfs-radzymin', mapKey: lineKey('rdz'), routeTypes: ['3'],
       nameFix: (n) => n.replace(/^([^,]+),\s+/, '$1 ') },
-    { tag: 'sul', dir: 'data/gtfs-sulejowek', mapKey: (sn) => sn, routeTypes: ['3'] },
-    { tag: 'wlw', dir: 'data/gtfs-wieliszew', mapKey: (sn) => sn, routeTypes: ['3'], titleCase: true },
-    { tag: 'zab', dir: 'data/gtfs-zabki', mapKey: (sn) => sn, routeTypes: ['3'] },
+    { tag: 'sul', dir: 'data/gtfs-sulejowek', mapKey: lineKey('sul'), routeTypes: ['3'] },
+    { tag: 'wlw', dir: 'data/gtfs-wieliszew', mapKey: lineKey('wlw'), routeTypes: ['3'], titleCase: true },
+    { tag: 'zab', dir: 'data/gtfs-zabki', mapKey: lineKey('zab'), routeTypes: ['3'] },
   ],
   // the road graph is the main extract plus the eastern strip added for the
   // Mińsk county lines (Overpass, 23.08.2026) — merged at load, ways deduped
@@ -178,7 +239,7 @@ if (tramAll || tramSel.length) MODES.push({
   color: '#d6212b', colorDark: '#7c1116',
   all: tramAll, lines: tramAll ? [] : tramSel,
   feeds: [
-    { tag: 'ztm', dir: 'data/gtfs-ztm', mapKey: (sn) => sn, routeTypes: ['0'] },
+    { tag: 'ztm', dir: 'data/gtfs-ztm', mapKey: lineKey('ztm'), routeTypes: ['0'] },
   ],
 });
 if (tramAll || metroSel.length) MODES.push({
@@ -187,7 +248,7 @@ if (tramAll || metroSel.length) MODES.push({
   color: '#d6212b', colorDark: '#7c1116',
   all: tramAll, lines: tramAll ? [] : metroSel,
   feeds: [
-    { tag: 'ztm', dir: 'data/gtfs-ztm', mapKey: (sn) => sn, routeTypes: ['1'] },
+    { tag: 'ztm', dir: 'data/gtfs-ztm', mapKey: lineKey('ztm'), routeTypes: ['1'] },
   ],
 });
 if (tramAll || railSel.length) MODES.push({
@@ -201,8 +262,8 @@ if (tramAll || railSel.length) MODES.push({
   color: '#a518a3', colorDark: '#5a0c59',
   all: tramAll, lines: tramAll ? [] : railSel,
   feeds: [
-    { tag: 'ztm', dir: 'data/gtfs-ztm', mapKey: (sn) => sn, routeTypes: ['2'] },
-    { tag: 'wkd', dir: 'data/gtfs-wkd', mapKey: (sn) => sn, routeTypes: ['2'],
+    { tag: 'ztm', dir: 'data/gtfs-ztm', mapKey: lineKey('ztm'), routeTypes: ['2'] },
+    { tag: 'wkd', dir: 'data/gtfs-wkd', mapKey: lineKey('wkd'), routeTypes: ['2'],
       lineColor: () => '#a518a3' },
   ],
 });
@@ -1748,6 +1809,30 @@ for (const f of routeFeatures) for (const [lon, lat] of f.geometry.coordinates) 
   if (lat < bLatMin) bLatMin = lat; if (lat > bLatMax) bLatMax = lat;
 }
 
+// ---------- display labels ----------
+// The keys keep their operator prefixes; every string the map PRINTS loses
+// them. Two keys can now print the same number — that is the point, because
+// the two streets print the same number — so each label group is deduplicated
+// on its own.
+const relabel = (s) => {
+  const out = [];
+  for (const k of s.split(', ')) {
+    const v = LBL.get(k) ?? k;
+    if (!out.includes(v)) out.push(v);
+  }
+  return out.join(', ');
+};
+for (const features of [routeFeatures, streetFeatures, labelFeatures, stopFeatures, badgeFeatures]) {
+  for (const f of features) {
+    const p = f.properties;
+    for (const k of ['lines', 'busLines', 'tLines', 'ntLines', 'mLines', 'nmLines']) {
+      if (typeof p[k] === 'string' && p[k]) p[k] = relabel(p[k]);
+    }
+    if (typeof p.line === 'string' && LBL.has(p.line)) p.lbl = LBL.get(p.line);
+  }
+}
+log(`Display labels: ${LBL.size} keys print the number the operator signs`);
+
 const outDir = join(ROOT, 'data/out');
 mkdirSync(outDir, { recursive: true });
 const fc = (features) => JSON.stringify({ type: 'FeatureCollection', features });
@@ -1763,7 +1848,13 @@ writeFileSync(join(outDir, 'meta.json'), JSON.stringify({
   bbox: [bLonMin, bLatMin, bLonMax, bLatMax],
   badgeBands: BADGE_BANDS,
   modes: MODES.map((m) => ({ mode: m.mode, label: m.label, color: m.color })),
-  lines: metaLines.map((l) => ({ ...l, rank: lineRank(l.line) })),
+  // the panel groups its chips by operator (the Berlin/Randstad panel)
+  ops: OP_NAME,
+  lines: metaLines.map((l) => ({
+    ...(LBL.has(l.line) ? { ...l, label: LBL.get(l.line) } : l),
+    op: LINE_OP.get(l.line) || 'ztm',
+    rank: lineRank(l.line),
+  })),
 }, null, 2));
 log(`Wrote data/out/{route,streets,labels,street-names,stops,badges,gtfs-shape}.geojson + meta.json`);
 
